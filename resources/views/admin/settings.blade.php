@@ -87,6 +87,69 @@
             </div>
         </div>
 
+        {{-- Personalización del botón de Login --}}
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h5 class="card-title mb-0">Personalización del Botón de Login</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label" for="button_text">Texto del botón</label>
+                        <input type="text"
+                               class="form-control @error('button_text') is-invalid @enderror"
+                               id="button_text"
+                               name="button_text"
+                               value="{{ old('button_text', $buttonText) }}"
+                               placeholder="Iniciar sesión con Casdoor SSO">
+                        @error('button_text')
+                            <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
+                        @enderror
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label" for="divider_text">Texto del separador</label>
+                        <input type="text"
+                               class="form-control @error('divider_text') is-invalid @enderror"
+                               id="divider_text"
+                               name="divider_text"
+                               value="{{ old('divider_text', $dividerText) }}"
+                               placeholder="O continuar con">
+                        @error('divider_text')
+                            <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
+                        @enderror
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label" for="button_color">Color del botón</label>
+                        <input type="color"
+                               class="form-control form-control-color w-100 @error('button_color') is-invalid @enderror"
+                               id="button_color"
+                               name="button_color"
+                               value="{{ old('button_color', $buttonColor) }}">
+                        @error('button_color')
+                            <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
+                        @enderror
+                    </div>
+
+                    <div class="col-md-8 mb-3">
+                        <label class="form-label" for="button_icon">Icono (clase CSS, opcional)</label>
+                        <input type="text"
+                               class="form-control @error('button_icon') is-invalid @enderror"
+                               id="button_icon"
+                               name="button_icon"
+                               value="{{ old('button_icon', $buttonIcon) }}"
+                               placeholder="Ej. bi bi-shield-lock-fill (dejar vacío para usar el escudo por defecto)">
+                        @error('button_icon')
+                            <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
+                        @enderror
+                    </div>
+                </div>
+            </div>
+        </div>
+
         {{-- Tabla dinámica de Mapeo de Grupos LDAP/Casdoor a Roles de Azuriom --}}
         <div class="card shadow mb-4">
             <div class="card-header py-3 d-flex justify-content-between align-items-center">
