@@ -1,0 +1,15 @@
+{
+    "id": "casdoor-auth",
+    "name": "CasdoorAuth",
+    "description": "Autenticación OIDC/SSO con Casdoor y sincronización automática de grupos LDAP a roles de Azuriom.",
+    "version": "1.0.0",
+    "url": "https://github.com/1HorusMC/SSO-Azuriom",
+    "authors": [
+        "1HorusMC"
+    ],
+    "azuriom_api": "1.1.0",
+    "providers": [
+        "\\Azuriom\\Plugin\\CasdoorAuth\\Providers\\CasdoorAuthServiceProvider",
+        "\\Azuriom\\Plugin\\CasdoorAuth\\Providers\\RouteServiceProvider"
+    ]
+}
