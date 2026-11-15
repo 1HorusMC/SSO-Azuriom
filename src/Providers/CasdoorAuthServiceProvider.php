@@ -4,6 +4,7 @@ namespace Azuriom\Plugin\CasdoorAuth\Providers;
 
 use Azuriom\Extensions\Plugin\BasePluginServiceProvider;
 use Azuriom\Models\Permission;
+use Illuminate\Support\Facades\Route;
 
 class CasdoorAuthServiceProvider extends BasePluginServiceProvider
 {
@@ -22,6 +23,16 @@ class CasdoorAuthServiceProvider extends BasePluginServiceProvider
     {
         $this->loadViews();
         $this->loadTranslations();
+
+        if (! $this->app->routesAreCached()) {
+            Route::middleware('web')
+                ->group(plugin_path($this->plugin->id.'/routes/web.php'));
+
+            Route::middleware(['web', 'admin-access'])
+                ->prefix('admin/casdoor-auth')
+                ->name('casdoor-auth.admin.')
+                ->group(plugin_path($this->plugin->id.'/routes/admin.php'));
+        }
 
         $this->registerAdminNavigation();
 
