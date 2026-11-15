@@ -1,0 +1,10 @@
+{
+    "name": "azuriom/casdoor-auth",
+    "type": "azuriom-plugin",
+    "description": "Autenticación OIDC/SSO con Casdoor y sincronización automática de grupos LDAP a roles de Azuriom.",
+    "autoload": {
+        "psr-4": {
+            "Azuriom\\Plugin\\CasdoorAuth\\": "src/"
+        }
+    }
+}
