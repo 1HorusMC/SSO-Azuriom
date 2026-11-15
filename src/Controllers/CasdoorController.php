@@ -113,7 +113,16 @@ class CasdoorController extends Controller
             ?? $casdoorUser['name']
             ?? Str::before($email, '@');
 
-        // 3. Find or create the user in Azuriom
+        // 3. If the user is already authenticated, link & sync their current account
+        if (Auth::check()) {
+            $user = Auth::user();
+            $this->syncUserRole($user, $casdoorUser);
+
+            return redirect()->route('profile.index')
+                ->with('success', 'Tu cuenta ha sido vinculada y sincronizada con Casdoor SSO.');
+        }
+
+        // 4. Find or create the user in Azuriom
         $user = User::where('email', $email)->first();
 
         if ($user === null) {
