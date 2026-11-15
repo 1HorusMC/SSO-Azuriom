@@ -7,19 +7,19 @@
             gap: 0.6rem !important;
             width: 100% !important;
             padding: 0.7rem 1.2rem !important;
-            background: linear-gradient(135deg, #5865F2 0%, #3b49df 100%) !important;
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%) !important;
             color: #ffffff !important;
             font-weight: 600 !important;
             font-size: 0.95rem !important;
             text-decoration: none !important;
             border: none !important;
             border-radius: 0.5rem !important;
-            box-shadow: 0 2px 8px rgba(88, 101, 242, 0.25) !important;
+            box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3) !important;
             transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease !important;
         }
         #casdoor-sso-login-btn:hover {
             transform: translateY(-2px) !important;
-            box-shadow: 0 6px 16px rgba(88, 101, 242, 0.45) !important;
+            box-shadow: 0 6px 16px rgba(239, 68, 68, 0.5) !important;
             filter: brightness(1.08) !important;
             color: #ffffff !important;
         }
